@@ -6,9 +6,16 @@ body {
 }
 main {
 	background-color: rgb(36,36,36);
+	color: #ccc;
+	font-family: 'helvetica', sans-serif;
+	letter-spacing: .8px;
+	padding: 15%;
 	width: 90%;
 	height: 100vh;
 }
+
+
+
 aside {
 	background-color: rgb(24,24,24);
 	width: 10%;
