@@ -9,10 +9,7 @@ html,body {
 ul {
 	list-style: none;
 }
-a {
-	text-decoration: none;
-	color: #363636;
-}
+
 
 
 
@@ -33,50 +30,61 @@ header {
 	position: relative;
 	left: 10em;
 }
+.top-nav ul>li {
+	width: 13em;
+	height: 3.3em;
+	list-style: none;
+}
+.top-nav li>a {
+	text-decoration: none;
+	display: block;
+	line-height: 3.3em;
+	width: inherit;
+	text-align: center;
+	letter-spacing: 2px;
+}
 .contacts>ul {
 	display: flex;
 	flex-direction: row;
 	position: relative;
 	left: 10em;
-	top: -3em;
+	top: -3.3em;
+	padding: 0;
 }
-.top-nav ul li {
-	width: 11em;
-	height: 3.3em;
-	list-style: none;
+.contacts a {
+color: #363636;
 }
-.top-nav li>a {
-	display: block;
-	line-height: 3.3em;
-	width: inherit;
-	text-align: center;
-	letter-spacing: 1px;
-}
-.contacts-list li:first-child {
+.contacts-list>li:first-child {
 	border-radius: 2em 0 0 2em;
 }
-.contacts-list li:last-child {
+.contacts-list>li:last-child {
 	border-radius: 0 2em 2em 0;
 }
-.contacts-list ul li {
+ul .nav-secondRow>li {
+	width: inherit;
 	height: 2.5em;
-	letter-spacing: 1px;
 }
-.nav-secondRow {
-	padding-left: 1.8em;
+ul .nav-secondRow>li>a {
+	color: #e6e6e6;
+	display: block;
+	width: inherit;
+	height: 2.5em;
+	line-height: 2.5em;
+	text-align: left;
+	padding-left: .8em;
 }
-.nav-secondRow li:first-child {
-	margin-top: 1em;
-}
-li>.nav-secondRow {
+ul .nav-secondRow {
 	display: none;
 }
+
+/* ====================== :hovers ====== */
 li:hover>.nav-secondRow {
 	background-color: rgba(38,38,38,1);
 	display: flex;
 	box-shadow: 0px 0px 15px #fff;
 	flex-direction: column;
-	width: 12em;
+	width: 15em;
+	padding: 0;
 }
 .contacts>ul>li {
 	visibility: hidden;
@@ -89,20 +97,26 @@ li:hover>.nav-secondRow {
 ul:hover li {
 	visibility: visible;
 }
-.contacts:hover>ul>li>a {
+ul>.contacts:hover>ul>li>a {
 	color: #e6e6e6;
 }
 li:hover>a {
 	color: #e6e6e6;
-	font-weight: bold;
+	text-decoration: underline;
 }
 .top-nav li:hover .navSecondRow {
+	color: #fff;
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
 }
-.contacts:hover>a {
+.top-nav li:hover .navSecondRow {
+	color: #e6e6e6;
+}
+ul>.contacts:hover>a {
+	text-decoration: none;
 	color: #363636;
+	font-weight: bold;
 }
 
 
@@ -113,28 +127,76 @@ li:hover>a {
 * ====================== aside section
 */
 aside {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	flex: 1;
 	height: 100vh;
 }
 aside p:first-child {
 	font-family: Impact, Georgia, Verdana, sans-serif;
 	font-size: 1.4em;
-	padding: .2em 0 0 2em;
+	padding-top: .2em;
+	padding-left: 1em;
 	letter-spacing: 1px;
 }
 aside h1 {
 	font-family: Monaco, "Helvetica Neue", "URW Chancery L", fantasy;
-	font-size: 3.8em;
+	font-size: 3.6em;
 	text-align: center;
-	margin: 40vh 0 35vh .5em;
+	text-shadow: 1px 1px 0px rgba(255,255,255,0.3);
 }
 aside h1>a {
+	text-decoration: none;
 	color: #000;
 }
 aside p:last-child {
 	color: #808080;
 	padding-left: .5em;
 }
+.title-name,
+.logo-name {
+	position: relative;
+}
+.title-name-anim,
+.logo-anim {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.title-name-anim {
+	animation: titleAnimation 4.5s ease;
+	-webkit-animation: titleAnimation 4.5s ease;
+}
+.logo-anim {
+	animation: logoanim 3.8s ease;
+	-webkit-animation: logoanim 3.8s ease;
+}
+@keyframes titleAnimation {
+	from {background-color: #fff;}
+	to {background-color: transparent;}
+}
+/*@keyframes titleAnimation {
+	from {color: #fff;}
+	to {color: #363636;}
+}*/
+@keyframes logoanim {
+	from {
+	background-image: -webkit-linear-gradient(10deg, #fff 50%, transparent 50%);
+	background-image: -o-linear-gradient(10deg, #fff 50%, transparent 50%);
+	background-image: linear-gradient(100deg, #fff 50%, transparent 50%);
+	background-position: 0 100%;
+	background-size: 300%;}
+	to {	
+		background-image: -webkit-linear-gradient(10deg, #fff 50%, transparent 50%);
+		background-image: -o-linear-gradient(10deg, #fff 50%, transparent 50%);
+		background-image: linear-gradient(100deg, #fff 50%, transparent 50%);
+		background-position: 100% 0;
+		background-size: 300%;}	
+}
+
 
 
 
@@ -147,7 +209,7 @@ main {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-attachment: fixed;
-	flex: 4;
+	flex: 3;
 }
 .scrolly-slide {
   margin: 0 auto;
@@ -177,21 +239,51 @@ img {
 	letter-spacing: 1px;
 }
 .last-slide-about-me {
-  padding: 4em 8em 12em 4em;
+	display: flex;
+	flex-direction: column;
+  padding: 4em 6em 5em 4em;
 	background-color: rgba(53, 46, 44,0.9);
 	color: #f4e0bf;
+	font-weight: 300;
 }
-.last-slide-about-me>h1,
-.last-slide-about-me>h2 {
+.last-slide-about-me>h1 {
+	color: #da9825;	
+}
+.li-contacts {
 	color: #da9825;
+	font-size: 2em;
+	font-weight: bold;
+	margin-bottom: .5em;
+	position: relative;
+	left: -1.4em;
 }
-.last-slide-about-me>p:last-child {
-  position: relative;
-  bottom: -10em;
-  left: 41em;
+.contacts-and-links {
+	display: inline-flex;
+	flex-wrap: wrap;
+	flex: 1;
+}
+.a-contacts:nth-of-type(1) {
+	margin-right: 4em;
+	margin-bottom: 1em;
+}
+.a-contacts li {
+	margin-bottom: .2em;
+}
+.a-contacts a {
+	text-decoration: none;
+	color: #f4e0bf;
+}
+.a-contacts a:hover {
+	text-decoration: underline;
+	color: #f4e0bf;
 }
 .last-slide-about-me>p:last-child>a {
-	color: #8c8c8c;	
+	color: #8c8c8c;
+	text-decoration: none;
+}
+.icone-goTop {
+	align-self: flex-end;
+	align-content: flex-end;
 }
 
 
