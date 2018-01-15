@@ -318,6 +318,9 @@ img {
 		display: flex;
 		flex-direction: column;
 	}
+	aside p {
+		font-size: 10px;
+	}
 	main {
 		width: 100vw;
 		height: 100vh;
@@ -325,5 +328,10 @@ img {
 	.logo-name {
 		border: 1px solid #363636;
 		border-radius: 2px;
+	}
+	.last-slide-about-me {
+		font-size: 10px;
+		line-height: .9;
+		padding: 2em 3em 2.5em 2em;
 	}
 }
